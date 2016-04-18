@@ -1,0 +1,5 @@
+.inlines {
+  > * {
+    display: inline-block;
+  }
+}

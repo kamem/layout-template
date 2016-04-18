@@ -1,0 +1,20 @@
+:root {
+  --header-background-color: #333;
+  --header-color: #fff;
+  --header-title-size: 2rem;
+}
+
+#header {
+  background-color: var(--header-background-color);
+  padding: 20px;
+
+  margin-left: var(--global-nav-width);
+
+  > * {
+    color: var(--header-color);
+  }
+
+  h1 {
+    font-size: var(--header-title-size);
+  }
+}

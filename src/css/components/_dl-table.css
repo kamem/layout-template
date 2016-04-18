@@ -1,0 +1,72 @@
+.dl-table {
+	.main & {
+		margin: 30px 20px 0;
+	}
+	.modal & {
+		margin: 30px 10px 10px;
+	}
+	.modal .area & {
+		margin: 0 10px 10px;
+	}
+
+	&:after{
+	  content: ".";
+	  display: block;
+	  height: 0;
+	  font-size:0;
+	  clear: both;
+	  visibility:hidden;
+	}
+
+	> dt,
+	> dd {
+		margin-top: 40px;
+		float: left;
+		box-sizing: border-box;
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
+	> dt {
+		width: 180px;
+		margin-right: -180px;
+		float: left;
+		text-align: right;
+		clear: both;
+	}
+	> dd {
+		margin-left: 220px;
+		max-width: 720px;
+		width: 720px;
+	}
+
+	&.single {
+		> dt,
+		> dd {
+			margin-top: 40px;
+		}
+	}
+
+	&.small {
+		dt,
+		dd {
+			margin-top: 30px;
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+		dt {
+			width: 130px;
+			margin-right: -130px;
+		}
+		dd {
+			padding-left: 170px;
+		}
+		&.single {
+			> dt,
+			> dd {
+				margin-top: 30px;
+			}
+		}
+	}
+}

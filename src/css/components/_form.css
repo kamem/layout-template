@@ -1,0 +1,104 @@
+:root {
+	--normal-border-color: #DEDEDE;
+	--strong-border-color: #999999;
+	--button-warning-color: #FF6865;
+	--marker-color: #3A444F;
+}
+
+@define-mixin form-parts-base {
+	border: 1px solid var(--normal-border-color);
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: 13px;
+	background-color: #FFFFFF;
+	padding: 4px 6px;
+
+	&[disabled],
+	&[readonly] {
+		background: var(--normal-border-color);
+	}
+
+	&:focus {
+		outline: none;
+		border-color: var(--strong-border-color);
+	}
+
+	&:hover {
+		outline: none;
+		border-color: var(--strong-border-color);
+	}
+
+	&::placeholder {
+		color: var(--text-light-color);
+	}
+
+	&.error-form {
+		border-color: var(--button-warning-color);
+	}
+}
+
+@define-mixin form-arrow {
+	&::after {
+		content: "\EA06";
+		font-family: aberdeen-font;
+		display: inline-block;
+		width: 10px;
+		height: 28px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: #333;
+		transform: rotate(-90deg);
+		font-size: 10px;
+		font-style: normal;
+		line-height: 1;
+	}
+}
+
+@define-mixin bg-reset {
+	background-image: none !important;
+	background-color: transparent;
+}
+
+
+input {
+	&[type="password"],
+	&[type="text"],
+	&[type="number"],
+	&[type="url"] {
+		@mixin form-parts-base;
+		.list-ico & {
+			&.large {
+				padding-left: 45px;
+			}
+		}
+
+		&.large {
+	    padding: 15px;
+			font-size: 16px;
+		}
+	}
+}
+
+textarea {
+	@mixin form-parts-base;
+}
+
+select {
+	@mixin form-parts-base;
+	height: 30px;
+	appearance: none;
+	line-height: 13px;
+	padding-right: 25px;
+}
+
+.radio {
+	label:not(:last-of-type) {
+		margin-right: 40px;
+	}
+}
+
+.toggle-accordion {
+	display: inline-block;
+	margin-bottom: 20px;
+}

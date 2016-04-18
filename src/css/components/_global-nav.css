@@ -1,0 +1,27 @@
+:root {
+  --gloval-nav-background-color: #111;
+  --gloval-nav-color: #fff;
+  --global-nav-width: 200px;
+  --global-nav-height: 100%;
+}
+
+#global-nav {
+  background-color: var(--gloval-nav-background-color);
+
+  h1 {
+    display: none;
+  }
+  !& .ul{
+    background: red;
+  }
+}
+
+.menu {
+  #global-nav & {
+      width: var(--global-nav-width);
+  }
+
+  a {
+    color: var(--gloval-nav-color);
+  }
+}
